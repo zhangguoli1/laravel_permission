@@ -7,7 +7,7 @@ $this->post('login', 'Auth\LoginController@login')->name('auth.login');
 $this->post('logout', 'Auth\LoginController@logout')->name('auth.logout');
 
 // Change Password Routes...
-Route::group(['middleware'=>['permission:change_password']],function(){
+Route::group(['middleware'=>['permission']],function(){
 	Route::get('change_password', 'Auth\ChangePasswordController@showChangePasswordForm')->name('auth.change_password');
 	Route::patch('change_password', 'Auth\ChangePasswordController@changePassword')->name('auth.change_password');
 });

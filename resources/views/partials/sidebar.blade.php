@@ -5,13 +5,13 @@
     <section class="sidebar">
         <ul class="sidebar-menu">
 
-            <li class="{{ $request->segment(1) == 'home' ? 'active' : '' }}">
+      <!--       <li class="{{ $request->segment(1) == 'home' ? 'active' : '' }}">
                 <a href="{{ url('/') }}">
                     <i class="fa fa-wrench"></i>
                     <span class="title">@lang('global.app_dashboard')</span>
                 </a>
             </li>
-            
+             -->
             @can('users_manage')
             <li class="treeview">
                 <a href="#">
@@ -51,11 +51,22 @@
             </li>
             @endcan
             @can('change_password')
-            <li class="{{ $request->segment(1) == 'change_password' ? 'active' : '' }}">
-                <a href="{{ route('auth.change_password') }}">
+             <li class="treeview">
+                <a href="#">
                     <i class="fa fa-key"></i>
-                    <span class="title">Change password(修改密码)</span>
+                    <span class="title">chenge password</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
                 </a>
+                <ul class="treeview-menu">
+                    <li class="{{ $request->segment(1) == 'change_password' ? 'active active-sub' : '' }}">
+                        <a href="{{ route('auth.change_password') }}">
+                            <i class="fa fa-key"></i>
+                            <span class="title">修改密码</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
             @endcan
            <!--  <li>
