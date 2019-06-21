@@ -19,6 +19,8 @@
                         <th style="text-align:center;"><input type="checkbox" id="select-all" /></th>
                         <th>@lang('global.roles.fields.name')</th>
                         <th>@lang('global.roles.fields.permission')</th>
+                        <th>身份</th>
+
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
@@ -34,6 +36,7 @@
                                         <span class="label label-info label-many">{{ $permission }}</span>
                                     @endforeach
                                 </td>
+                                <td>{{$role->type}}</td>
                                 <td>
                                     <a href="{{ route('admin.roles.edit',[$role->id]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>
                                     {!! Form::open(array(

@@ -46,13 +46,19 @@
                 </div>
             </div>
         </section>
+        <div style="height: 66px;
+    line-height: 66px;
+    font-size: 13px;
+    color: #929293;position: absolute;bottom:10px;left:50%">
+            Copyright © zhang 2004-{{date("Y")}} 备案号： 技术支持：acman
+        </div>
+
     </div>
 </div>
 
 {!! Form::open(['route' => 'auth.logout', 'style' => 'display:none;', 'id' => 'logout']) !!}
 <button type="submit">Logout</button>
 {!! Form::close() !!}
-
 @include('partials.javascripts')
 </body>
 </html>
